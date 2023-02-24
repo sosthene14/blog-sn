@@ -1,3 +1,17 @@
+## Blog avec recherche et tri par catégorie
+# Description
+Ce projet est un blog développé en React qui permet de rechercher des articles en utilisant l'API News et de les trier par catégories. L'application utilise des composants React pour afficher les résultats de recherche et de tri. Les fonctionnalités incluent :
+
+# Recherche d'articles par mot-clé
+# Tri des articles par catégorie
+# Affichage des résultats de recherche et de tri dans une liste
+# Affichage des détails de chaque article sélectionné
+## Technologies utilisées
+# React
+# React Router pour la gestion des routes
+# Axios pour les appels API
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
