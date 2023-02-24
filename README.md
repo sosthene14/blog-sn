@@ -3,14 +3,14 @@
 Ce projet est un blog développé en React qui permet de rechercher des articles en utilisant l'API News et de les trier par catégories. L'application utilise des composants React pour afficher les résultats de recherche et de tri. Les fonctionnalités incluent :
 
 Recherche d'articles par mot-clé<br>
-Tri des articles par catégorie
-Affichage des résultats de recherche et de tri dans une liste
-Affichage des détails de chaque article sélectionné
+Tri des articles par catégorie<br>
+Affichage des résultats de recherche et de tri dans une liste<br>
+Affichage des détails de chaque article sélectionné<br>
 ## Technologies utilisées
-React
-React Router pour la gestion des routes
-Axios pour les appels API
-##Installation
+React<br>
+React Router pour la gestion des routes<br>
+Axios pour les appels API<br>
+## Installation
 
 
 # Getting Started with Create React App
