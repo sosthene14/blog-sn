@@ -108,24 +108,21 @@ body {
   left: 50px;
 }
 
+
+
 #author-names {
+  font-size: 0.7em;
+  color: #a2a2a2;
   margin-top: 10px;
-  font-size: 0.7em;
-  color: #a2a2a2;
-}
-#author-publication-date
-{
-  font-size: 0.7em;
-  color: #a2a2a2;
 }
 .home-page-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 110px;
-
+  margin-left: 150px;
+  margin-right: 150px;
 }
-
 .btn {
   border: none;
   background-color: #ffd700;
@@ -137,8 +134,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.5s;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
 }
 .btn:hover {
   background-color: #a4953c;
@@ -147,23 +143,16 @@ body {
 .article {
   transition: all 1s;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
 }
-.main-article
-{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 70%;
+.other-article-img {
+  width: 440px;
+  margin-top: 20px;
 }
-@media only screen and (min-width: 280px) {
-  .range {
-    width: 275px;
-    
-  }
-}
+
+
 @media only screen and (min-width: 360px) {
   .range {
     width: 350px;
@@ -201,16 +190,42 @@ body {
     margin-right: 0px;
   }
 }
-.btn-sorting-div
-{
+
+.div-second-and-third-article {
   display: flex;
-  gap: 15px;
-  margin-bottom: 50px;
+  gap: 79px;
   flex-wrap: wrap;
+  margin-bottom: 30px;
   align-items: center;
   justify-content: center;
 }
+.description-paragraph
+{
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  margin-top: 20px;
+}
 
+.render-article
+{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+@media (max-width: 1020px) {
+  .render-article {
+    grid-template-columns: 1fr;
+  }
+}
+
+.main-article {
+  padding-bottom: 20px;
+}
+.main-article,
+p {
+  margin-right: 7px;
+}
 .navbar-burger {
   width: 40px;
   height: 40px;
@@ -390,19 +405,41 @@ nav .content .links {
 .content .links ul li:hover ul {
   top: 0;
 }
-
+.midle-article-section-div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-right: 20px;
+  margin-top: 50px;
+}
 .rounded-arcticle-img {
   width: 250px;
   height: 250px;
   border-radius: 50%;
 }
-
+.best-article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .superposed-content {
   text-align: center;
   position: absolute;
   transform: translateY(120px);
   width: 200px;
   color: white;
+}
+.bottom-article-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  gap: 50px;
+}
+#best-article-h1 {
+  text-align: center;
+  margin-top: 100px;
 }
 
 .footer {
@@ -416,15 +453,31 @@ nav .content .links {
   text-align: center;
 }
 
+.rounded-arcticle-img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.rounded-arcticle-img:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
 
 .template {
   transition: all 0.8s;
   display: grid;
 }
 .template:hover {
- color: #9201a8;
+  transform: scale(0.8, 0.8);
 }
-
+.img-search {
+  width: 150px;
+}
+.search-img {
+  width: 100px;
+}
 .template_Container {
   display: flex;
   flex-direction: row;
@@ -447,7 +500,12 @@ nav .content .links {
   flex-wrap: wrap;
   gap: 20px;
 }
-
+.icons {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin-top: 10px;
+}
 .sort-button {
   border: none;
   background-color: #ffd700;
@@ -475,21 +533,33 @@ nav .content .links {
   flex-direction: column;
   margin-top: 15px;
 }
-
+.articles-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.article-img {
+  width: 250px;
+  margin-top: 20px;
+}
+.article-id {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .article-content {
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 50px;
+  white-space: pre-wrap;
 }
 .article-title {
   margin-top: 20px;
   color: #1b151c;
+  text-decoration: underline;
+  margin: auto;
   text-align: center;
-  margin-right: 30%;
-}
-.article-description
-{
-  width: 100%;
 }
 .comment-btn {
   border: none;
@@ -705,155 +775,182 @@ button:hover {
   color: #848484;
   font-size: 0.7em;
 }
-.lds-spinner {
-  color: official;
-  display: flex;
-  margin-right: 70px;
-  position: relative;
-  justify-content: center;
-}
-.lds-spinner div {
-  transform-origin: 40px 40px;
-  animation: lds-spinner 1.2s linear infinite;
-}
-.lds-spinner div:after {
-  content: " ";
-  display: flex;
-  position: absolute;
-  top: 3px;
-  left: 37px;
-  width: 6px;
-  height: 18px;
-  border-radius: 20%;
-  background: #cd42ac;
-  justify-content: center;
-}
-.lds-spinner div:nth-child(1) {
-  transform: rotate(0deg);
-  animation-delay: -1.1s;
-}
-.lds-spinner div:nth-child(2) {
-  transform: rotate(30deg);
-  animation-delay: -1s;
-}
-.lds-spinner div:nth-child(3) {
-  transform: rotate(60deg);
-  animation-delay: -0.9s;
-}
-.lds-spinner div:nth-child(4) {
-  transform: rotate(90deg);
-  animation-delay: -0.8s;
-}
-.lds-spinner div:nth-child(5) {
-  transform: rotate(120deg);
-  animation-delay: -0.7s;
-}
-.lds-spinner div:nth-child(6) {
-  transform: rotate(150deg);
-  animation-delay: -0.6s;
-}
-.lds-spinner div:nth-child(7) {
-  transform: rotate(180deg);
-  animation-delay: -0.5s;
-}
-.lds-spinner div:nth-child(8) {
-  transform: rotate(210deg);
-  animation-delay: -0.4s;
-}
-.lds-spinner div:nth-child(9) {
-  transform: rotate(240deg);
-  animation-delay: -0.3s;
-}
-.lds-spinner div:nth-child(10) {
-  transform: rotate(270deg);
-  animation-delay: -0.2s;
-}
-.lds-spinner div:nth-child(11) {
-  transform: rotate(300deg);
-  animation-delay: -0.1s;
-}
-.lds-spinner div:nth-child(12) {
-  transform: rotate(330deg);
-  animation-delay: 0s;
-}
-@keyframes lds-spinner {
-  0% {
-    opacity: 1;
+
+
+import React from "react";
+
+function DataInformation({ data }) {
+  if (!Array.isArray(data) || data.length === 0) {
+    return (
+      <div className="lds-spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    );
   }
-  100% {
-    opacity: 0;
-  }
-}
-.small-deco
-{
-  width: 100px;
-  height: 5px;
-  border-radius: 10px;
-  background-color: #f2268f;
-}
-.my-form
-{
-  display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  margin-top: 50px;
-}
-.form-inputs
-{
-  display: flex;
-  flex-direction: column-reverse;
-  
-  gap: 20px;
-}
-.div-for-spacing-inputs
-{
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  padding: 20px;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-.name-email-divs
-{
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-.div-for-spacing-inputs input 
-{
-  height: 58px;
-  border-radius: 5px;
-  border: 1px solid rgb(241, 234, 255);
-  outline: none;
-  padding: 10px;
-  
-}
-.div-for-spacing-inputs input:focus
-{
-  border: 2px solid rgba(200, 172, 255, 0.2);
-}
-.div-for-spacing-inputs textarea
-{
-  height: 150px;
-  resize: none;
-  border-radius: 5px;
-  border: 1px solid rgb(241, 234, 255);
-  outline: none;
-  padding: 10px;
-  transition: all .1s;
-  
-}
-.div-for-spacing-inputs textarea:focus
-{
-  border: 5px solid rgba(200, 172, 255, 0.2);
  
-}
-.div-for-spacing-inputs button 
-{
-  height: 57px;
-  font-size: 1.2em;
+
+  function formatDate(dateToFormat) {
+    const myDate = new Date(dateToFormat);
+    const options = {
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+    };
+    return myDate.toLocaleDateString("en-US", options);
+  }
+  const listArticle = [data[0], data[1], data[2], data[3], data[4], data[5]];
+  const listPublicationDate = [
+    data[0].author,
+    data[1].author,
+    data[2].author,
+    data[3].author,
+    data[4].author,
+    data[5].author,
+  ];
+
+  return (
+    <section className="home-page-section">
+      <div className="article" id="range-div">
+        <h3>{listArticle[0].title}</h3>
+        <img src={listArticle[0].urlToImage} className="range" alt="Article" />
+        <article className="main-article">
+          <p>
+            {listArticle[0].description}
+            <br />
+            <span id="author-names">{listArticle[0].author}</span>
+            <span id="author-publication-date">
+            {listArticle[0].publishedAt}
+            </span>
+          </p>
+          <a href={listArticle[0].url}>
+            <button className="btn">Read more</button>
+          </a>
+        </article>
+      </div>
+
+      <div className="div-second-and-third-article">
+        <div className="article">
+          <h3>{listArticle[1].title}</h3>
+          <img
+            src={listArticle[1].urlToImage}
+            className="other-article-img"
+            alt="Article"
+          />
+          <article className="other-article">
+            <p>
+              {listArticle[1].description}
+              <br />
+              <span id="author-names">{listArticle[1].author}</span>
+              <span id="author-publication-date">
+              {listArticle[1].publishedAt}
+            </span>
+            </p>
+            <a href={listArticle[1].url}>
+              <button className="btn">Read more</button>
+            </a>
+          </article>
+        </div>
+        <div className="article">
+          <h3>{listArticle[2].title}</h3>
+          <img
+            src={listArticle[2].urlToImage}
+            className="other-article-img"
+            alt="Article"
+          />
+          <article className="other-article">
+            <p>
+              {listArticle[2].description}
+              <br />
+              <span id="author-names">{listArticle[2].author}</span>
+              <span id="author-publication-date">
+            {listArticle[2].publishedAt}
+            </span>
+            </p>
+            <a href={listArticle[2].url}>
+              <button className="btn">Read more</button>
+            </a>
+          </article>
+        </div>
+        <div className="article">
+          <h3>{listArticle[3].title}</h3>
+          <img
+            src={listArticle[3].urlToImage}
+            className="other-article-img"
+            alt="Article"
+          />
+          <article className="other-article">
+            <p>
+              {listArticle[3].description}
+              <br />
+              <span id="author-names">{listArticle[3].author}</span>
+              <span id="author-publication-date">
+            {listArticle[3].publishedAt}
+            </span>
+            </p>
+            <a href={listArticle[3].url}>
+              <button className="btn">Read more</button>
+              
+            </a>
+          </article>
+        </div>
+        <div className="article">
+          <h3>{listArticle[4].title}</h3>
+          <img
+            src={listArticle[4].urlToImage}
+            className="other-article-img"
+            alt="Article"
+          />
+          <article className="other-article">
+            <p>
+              {listArticle[4].description}
+              <br />
+              <span id="author-names">{listArticle[4].author}</span>
+              <span id="author-publication-date">
+            {listArticle[4].publishedAt}
+            </span>
+            </p>
+            <a href={listArticle[4].url}>
+              <button className="btn">Read more</button>
+            </a>
+          </article>
+        </div>
+        <div className="article">
+          <h3>{listArticle[5].title}</h3>
+          <img
+            src={listArticle[5].urlToImage}
+            className="other-article-img"
+            alt="Article"
+          />
+          <article className="other-article">
+            <p>
+              {listArticle[5].description}
+              <br />
+              <span id="author-names">{listArticle[5].author}</span>
+              <span id="author-publication-date">
+            {listArticle[5].publishedAt}
+            </span>
+            </p>
+            <a href={listArticle[5].url}>
+              <button className="btn">Read more</button>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  );
 }
 
+export default DataInformation;
