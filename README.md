@@ -21,4 +21,5 @@ Axios pour les appels API<br>
 ![capture d'ecran](https://github.com/sosthene14/blog-sn/blob/main/capture1.png)
 ![capture d'ecran](https://github.com/sosthene14/blog-sn/blob/main/capture2.png)
 ![capture d'ecran](https://github.com/sosthene14/blog-sn/blob/main/capture3.png)
-
+## Autheur 
+Sosthene Mounsamboté
