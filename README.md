@@ -17,4 +17,8 @@ Axios pour les appels API<br>
 `npm install`
 ### 3- Executez
 `npm start`<br>
+## Capture d'ecrans du programme
+![capture d'ecran](https://github.com/sosthene14/blog-sn/blob/main/capture1.png)
+![capture d'ecran](https://github.com/sosthene14/blog-sn/blob/main/capture2.png)
+![capture d'ecran](https://github.com/sosthene14/blog-sn/blob/main/capture3.png)
 
