@@ -1,14 +1,12 @@
 import DataAPI from "../components/dataApi";
-import NavBar from "../components/navBarSection";
 import Footer from "../components/footer";
-import TopSection from "../components/topSection";
 function Thechnology()
 {
+    const apiKey = "RNwwcphQRRy3NZ4_RXdc6ERIlRLq-PnQ0viuMsxZ8GI";
+    const apiEndpoint = "https://api.newscatcherapi.com/v2/latest_headlines?countries=FR&topic=tech";
     return(
         <>
-        <TopSection api={("https://newsapi.org/v2/top-headlines?category=technology&country=fr&apiKey=9dc56c27b7f84eda90b863ff0748f7e4")}/>
-        <NavBar />
-        <DataAPI api={("https://newsapi.org/v2/top-headlines?category=technology&country=fr&apiKey=9dc56c27b7f84eda90b863ff0748f7e4")}/>
+        <DataAPI apiKey={apiKey} apiEndpoint={apiEndpoint} />
         <Footer />
         </>
     )

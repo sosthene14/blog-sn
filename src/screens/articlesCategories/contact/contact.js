@@ -47,8 +47,8 @@ function Contact() {
         </form>
       </div>
     </div>
-    <Footer/>
     </div>
+    
   );
 }
 export default Contact;

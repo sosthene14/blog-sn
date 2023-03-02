@@ -1,71 +1,72 @@
 import React, { useState, useEffect } from "react";
-import Axios from "axios";
 
-function SearchInput({api}) {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [data, setData] = useState([]);
 
-  useEffect(() => {
-    const getData = async () => {
-      const res = await Axios.get(api);
-      setData(res.data.articles);
-    };
-    getData();
-  }, []);
+class SearchInput extends React.Component {
+  state = {
+    posts: [],
+    searchTerm: "",
+    query:""
+  };
 
-  if (data.length === 0) {
+  componentDidMount() {
+    this.fetchPosts();
+  }
+
+  fetchPosts = async () => {
+    const response = await fetch("https://api.hashnode.com", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({query: this.props.query}),
+    });
+    const ApiResponse = await response.json();
+    this.setState({ posts: ApiResponse.data.user.publication.posts });
+  };
+
+  render() {
+    const { searchTerm } = this.state;
     return (
-      <div className="lds-spinner">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+      <div>
+        <div className="div-right-icons">
+          <div className="search-input-div">
+            <input
+              type="text"
+              placeholder="Recherche"
+              className="input-search"
+              id="search-input"
+              value={searchTerm}
+              onChange={(event) => {
+                this.setState({ searchTerm: event.target.value });
+              }}
+            />
+            </div>
+            <div className="template_Container">
+              {this.state.posts
+                .filter((val) => {
+                  if (searchTerm === "") {
+                   
+                  } else if (
+                    val.title.toLowerCase().includes(searchTerm.toLowerCase())
+                  ) {
+                    return val;
+                  }
+                })
+                .map((val, index) => {
+                  return (
+                    <a href={`https://blog.rutikwankhade.dev/${val.slug}`} key={index} target="_blank">
+                      <div className="template">
+                        <h3>{val.title}</h3>
+                      </div>
+                    </a>
+                  );
+                })}
+            </div>
+          </div>
+        
       </div>
     );
   }
-  return (
-    <div className="div-right-icons">
-      <div className="search-input-div">
-        <input
-          type="text"
-          placeholder="Recherche"
-          className="input-search"
-          id="search-input"
-          onChange={(event) => {
-            setSearchTerm(event.target.value);
-          }}
-        />
-      </div>
-      <div className="template_Container">
-          {
-            data
-              .filter((val) => {
-                if(searchTerm == ""){
-                 
-                }else if(val.title.toLowerCase().includes(searchTerm.toLowerCase())){
-                  return val;
-                }
-              })
-              .map((val) => {
-                return(
-                  <a href={val.url}>
-                  <div className="template" key={val.id}>
-                      <h3>{val.title}</h3>
-                  </div>
-                  </a> 
-                )
-              })
-          }
-        </div>
-    </div>
-  );
 }
+
 export default SearchInput;

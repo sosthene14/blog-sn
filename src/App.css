@@ -46,7 +46,7 @@ body {
     margin-left: 10px;
   }
   .input-search {
-    width: 150px;
+    width: 100px;
   }
 }
 
@@ -158,9 +158,9 @@ body {
   align-items: center;
   width: 70%;
 }
-@media only screen and (min-width: 280px) {
+@media only screen and (min-width: 200px) {
   .range {
-    width: 275px;
+    width: 245px;
     
   }
 }
@@ -209,6 +209,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .navbar-burger {
@@ -450,15 +451,14 @@ nav .content .links {
 
 .sort-button {
   border: none;
-  background-color: #ffd700;
+  background-color: #87abf4;
   cursor: pointer;
   padding: 10px;
   border-radius: 10px;
   transition: all 1s;
+  border: none;
 }
-.sort-button:hover {
-  background-color: #a4953c;
-}
+
 .sort-button-div {
   display: flex;
   gap: 10px;

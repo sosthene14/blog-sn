@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import About from "./screens/about_page/about";
 import Home from "./screens/home_page/home";
 import Entertainment from "./screens/articlesCategories/enternainment";
 import Business from "./screens/articlesCategories/business";
@@ -10,15 +9,18 @@ import { motion } from "framer-motion";
 import Contact from "./screens/articlesCategories/contact/contact";
 import Health from "./screens/articlesCategories/health";
 import Thechnology from "./screens/articlesCategories/technology";
+import ArticleDetail from "./screens/articlesCategories/articleDetails";
+import Test from "./screens/components/test";
 
 function App() {
   let component;
   switch (window.location.pathname) {
     case "/":
-      component = <Home />;
+      component = <Home />
       break;
     case "/Categorie/Business":
       component = <Business />;
+      ;
       break;
     case "/Categorie/Divertissement":
       component = <Entertainment />;
@@ -37,6 +39,9 @@ function App() {
       break;
     case "/Contact":
       component = <Contact />;
+      break;
+    case "/article/:link":
+      component = <ArticleDetail/>;
       break;
   }
 
